@@ -3,7 +3,7 @@
 # Writer: Andrew
 # Description: This file produces statistical result of experimental file. 
 #              Calculate the task entry and task sent jitter.
-#			   From the user input (filename, period), this provides 
+#			   From the user input (filename.txt, period), this provides 
 #			   mean, min, max, mode, median, stdev values to the text file.  
 #			   input file must be saved in ns scale.
 # CAUTION: It is running with python 3.4.X. 
@@ -12,6 +12,9 @@
 # Usage: python3.4 ./stat_cal.py ./<your_data> task_period(ns)
 #											  
 # TODO: 
+#      - Parsing the text files(.txt) in the directory, 
+#	  	 and determine the its task_period.
+#      - merge with trans2hist.py
 
 import sys
 import statistics
@@ -20,11 +23,13 @@ import os.path
 data_array = [] # from the text file, values are saved in ms scale. 
 abs_jitter_task_entry = [] 
 jitter_task_entry = []
+
 NS2MS = 1000000
 NS2US = 1000
 
 input_file = sys.argv[1]
 task_period = int(sys.argv[2])
+#task_period = [8000000, 4000000, 2000000, 1000000, 500000]
 
 with open (input_file, "r") as f:
 	for line in f:

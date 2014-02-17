@@ -1,0 +1,57 @@
+set terminal postscript enhanced color 
+
+set xlabel "Iteration"
+set ylabel "Task release time (ns)"
+set title "Xenomai: HRTimer enabled, task prio:99, SCHEDFIFO, 10M"
+
+set yrange[6000000:10000000]
+set output "./xeno_8ms_entry.eps"
+plot "./8ms_entry.txt" u 1 t "8ms-entry"
+
+unset yrange
+set yrange[3000000:5000000]
+set output "./xeno_4ms_entry.eps"
+plot "./4ms_entry.txt" u 1 t "4ms-entry"
+
+unset yrange
+set yrange[1000000:3000000]
+set output "./xeno_2ms_entry.eps"
+plot "./2ms_entry.txt" u 1 t "2ms-entry"
+
+unset yrange
+#set yrange[900000:1100000]
+set yrange[970000:1070000]
+set output "./xeno_1ms_entry.eps"
+plot "./1ms_entry.txt" u 1 t "1ms-entry"
+
+unset yrange
+set yrange[450000:550000]
+#set yrange[0:1000000]
+set output "./xeno_0.5ms_entry.eps"
+plot "./0.5ms_entry.txt" u 1 t "0.5ms-entry"
+
+unset yrange
+set yrange[6000000:10000000]
+set output "./xeno_8ms_sent.eps"
+plot "./8ms_sent.txt" u 1 t "8ms-entry"
+
+unset yrange
+set yrange[3000000:5000000]
+set output "./xeno_4ms_sent.eps"
+plot "./4ms_sent.txt" u 1 t "4ms-entry"
+
+unset yrange
+set yrange[1500000:2500000]
+set output "./xeno_2ms_sent.eps"
+plot "./2ms_sent.txt" u 1 t "2ms-entry"
+
+unset yrange
+set yrange[970000:1070000]
+#set yrange[900000:1100000]
+set output "./xeno_1ms_sent.eps"
+plot "./1ms_sent.txt" u 1 t "1ms-entry"
+
+unset yrange
+set yrange[450000:550000]
+set output "./xeno_0.5ms_sent.eps"
+plot "./0.5ms_sent.txt" u 1 t "0.5ms-entry"
