@@ -1,6 +1,9 @@
 statistical_scripts
 ===================
 
+
+DESCRIPTION
+-----------
 This repository is to generate statistical result from my experiment. 
 Codes are written by python. 
 
@@ -10,3 +13,6 @@ from in the input file.
 Using the python list structure, 
 it also provides task entry jiter output file 
 to execute later processing such as plotting.  
+
+USAGE
+-----------
